@@ -12,9 +12,27 @@
     "dest": "/",
     "methods":["GET","POST","PUT","PATCH","DELETE","OPTIONS"],
     "headers": {
-        "Access-Control-Allow-Origin": "https://hello-chat-silk.vercel.app/",
+        "Access-Control-Allow-Origin": "*",
         "Access-Control-Allow-Credentials": "true"
       }
-    }
+    },
+    {
+        "src": "/[^.]+",
+        "dest": "/",
+        "methods":["GET","POST","PUT","PATCH","DELETE","OPTIONS"],
+        "headers": {
+            "Access-Control-Allow-Origin": "*",
+            "Access-Control-Allow-Credentials": "true"
+          }
+        },
+        {
+            "src": "/socket.io/[^.]+",
+            "dest": "/",
+            "methods":["GET","POST","PUT","PATCH","DELETE","OPTIONS"],
+            "headers": {
+                "Access-Control-Allow-Origin": "*",
+                "Access-Control-Allow-Credentials": "true"
+              }
+            }
     ]
     }
