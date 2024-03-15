@@ -11,11 +11,11 @@ const cors = require('cors');
 
 app.use(express.json());
 
-// app.options("",cors({
-//     origin:"*",
-//     credential:true,
-//     methods:["GET","POST","PUT","DELETE"]
-// }))
+app.options("",cors({
+    origin:"*",
+    credential:true,
+    methods:["GET","POST","PUT","DELETE"]
+}))
 
 
 app.all((req, res, next) => {
@@ -33,7 +33,7 @@ app.all((req, res, next) => {
         credentials:true,
         methods:["GET","POST","PUT","DELETE"]
     }));
-    
+
   });
 
 
