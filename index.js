@@ -11,11 +11,11 @@ const cors = require('cors');
 
 app.use(express.json());
 
-app.options("",cors({
-    origin:"*",
-    credential:true,
-    methods:["GET","POST","PUT","DELETE"]
-}))
+// app.options("",cors({
+//     origin:"*",
+//     credential:true,
+//     methods:["GET","POST","PUT","DELETE"]
+// }))
 
 
 app.all((req, res, next) => {
@@ -29,7 +29,7 @@ app.all((req, res, next) => {
     next();
 
     app.use(cors({
-        origin:"*",
+        origin:"https://hello-chat-silk.vercel.app",
         credentials:true,
         methods:["GET","POST","PUT","DELETE"]
     }));
