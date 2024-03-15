@@ -17,11 +17,6 @@ app.use(express.json());
 //     methods:["GET","POST","PUT","DELETE"]
 // }))
 
-app.use(cors({
-    origin:"*",
-    credentials:true,
-    methods:["GET","POST","PUT","DELETE"]
-}));
 
 app.all((req, res, next) => {
     res.setHeader('Access-Control-Allow-Credentials', true);
@@ -32,6 +27,13 @@ app.all((req, res, next) => {
         'X-CSRF-Token, X-Requested-With, Accept, Accept-Version, Content-Length, Content-MD5, Content-Type, Date, X-Api-Version'
       )
     next();
+
+    app.use(cors({
+        origin:"*",
+        credentials:true,
+        methods:["GET","POST","PUT","DELETE"]
+    }));
+    
   });
 
 
